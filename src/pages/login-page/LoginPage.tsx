@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, SafeAreaView} from 'react-native';
+import {View, Text} from 'react-native';
 import {NavigationFunctionComponent} from 'react-native-navigation';
 
 interface Props {
@@ -9,11 +9,9 @@ interface Props {
 
 const LoginPage: NavigationFunctionComponent<Props> = () => {
   return (
-    <SafeAreaView>
-      <View>
-        <Text>Login</Text>
-      </View>
-    </SafeAreaView>
+    <View>
+      <Text>Login</Text>
+    </View>
   );
 };
 

@@ -2,12 +2,13 @@ import {Navigation} from 'react-native-navigation';
 import PagesEnum from '../enums/PagesEnum';
 import {Provider} from 'react-redux';
 import {RootState} from '../store';
+import withThemeProvider from '../utils/hocs/theme-hoc';
 
 export const registerPages = (provider: Provider, store: RootState) => {
   Object.values(PagesEnum).forEach(page =>
     Navigation.registerComponentWithRedux(
       page.name,
-      () => page.getComponentClassFunc,
+      () => withThemeProvider(page.getComponentClassFunc),
       provider,
       store,
     ),
