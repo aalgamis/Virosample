@@ -1,7 +1,20 @@
-import { AppRegistry } from 'react-native';
-import App from './App.js';
+import {Navigation} from 'react-native-navigation';
+import App from './src/App';
 
-AppRegistry.registerComponent('ViroSample', () => App);
+const APP_ROOT_NAME = 'appRootName';
 
-// The below line is necessary for use with the TestBed App
-AppRegistry.registerComponent('ViroSample', () => App);
+Navigation.registerComponent(APP_ROOT_NAME, () => App);
+Navigation.events().registerAppLaunchedListener(() => {
+  Navigation.setDefaultOptions({
+    layout: {
+      orientation: ['portrait'],
+    },
+  });
+  Navigation.setRoot({
+    root: {
+      component: {
+        name: APP_ROOT_NAME,
+      },
+    },
+  });
+});
