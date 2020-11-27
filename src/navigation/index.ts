@@ -15,21 +15,31 @@ export const registerPages = (provider: Provider, store: RootState) => {
   );
 };
 
-export const mainNavigation = () => {
-  return Navigation.setRoot({
-    root: {
-      component: {
-        name: PagesEnum.HOME.name,
-      },
-    },
-  });
-};
-
 export const onBoardingNavigation = () => {
   return Navigation.setRoot({
     root: {
       component: {
         name: PagesEnum.ONBOARDING.name,
+      },
+    },
+  });
+};
+
+export const authNavigation = () => {
+  return Navigation.setRoot({
+    root: {
+      component: {
+        name: PagesEnum.LOGIN.name,
+      },
+    },
+  });
+};
+
+export const mainNavigation = () => {
+  return Navigation.setRoot({
+    root: {
+      component: {
+        name: PagesEnum.HOME.name,
       },
     },
   });

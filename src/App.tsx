@@ -5,7 +5,8 @@ import {PersistGate} from 'redux-persist/integration/react';
 import createStore, {RootState} from './store';
 import {
   registerPages,
-  mainNavigation,
+  // mainNavigation,
+  authNavigation,
   onBoardingNavigation,
 } from './navigation';
 import colors from './theme/colors';
@@ -29,7 +30,7 @@ const NavigationLoader: FC = () => {
   );
 
   useEffect(() => {
-    !isOnBoardingHasBeenSeen ? mainNavigation() : onBoardingNavigation();
+    isOnBoardingHasBeenSeen ? authNavigation() : onBoardingNavigation();
   }, [isOnBoardingHasBeenSeen]);
 
   return <FullPageLoader />;

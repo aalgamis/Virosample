@@ -4,7 +4,7 @@ import {
   AppActionTypes,
   AppState,
   ONBOARDING_HAS_BEEN_SEEN,
-} from '../actions/app-action-types';
+} from '../actions/app-actions-types';
 
 const initialState: AppState = {
   isOnBoardingHasBeenSeen: false,
